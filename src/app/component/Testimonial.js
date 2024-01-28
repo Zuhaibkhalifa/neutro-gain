@@ -2,7 +2,7 @@
 "use client"; // This is a client component 👈🏽
 import React from "react";
 import dynamic from "next/dynamic";
-const TinySlider = dynamic(() => import("tiny-slider-react"),{ssr: false,});
+const TinySlider = dynamic(() => import("tiny-slider-react"), { ssr: false });
 import Image from "next/image";
 
 import "tiny-slider/dist/tiny-slider.css";
@@ -17,10 +17,7 @@ const settings = {
   autoplayTimeout: 3000,
   navPosition: "bottom",
   speed: 400,
-  controlsText: [
-    '<i class="mdi mdi-chevron-left "></i>',
-    '<i class="mdi mdi-chevron-right"></i>',
-  ],
+  controlsText: ['<i class="mdi mdi-chevron-left "></i>', '<i class="mdi mdi-chevron-right"></i>'],
   gutter: 0,
   responsive: {
     768: {
@@ -36,7 +33,7 @@ export default function Review() {
       name: "Calvin Carlo",
       designation: "Manager",
       description:
-        "According to most sources, Lorum Ipsum can be traced back to a text composed by Cicero Launch your campaign and benefit from our expertise.",
+        "NeutroGain has transformed my fitness journey! After incorporating their supplements into my routine, I've noticed significant gains in muscle mass and strength. Couldn't be happier with the results!",
     },
     {
       id: "2",
@@ -44,7 +41,7 @@ export default function Review() {
       name: "Christa Smith",
       designation: "Manager",
       description:
-        "According to most sources, Lorum Ipsum can be traced back to a text composed by Cicero Launch your campaign and benefit from our expertise.",
+        "As a professional athlete, I'm always looking for ways to enhance my performance. NeutroGain's products have been a game-changer for me. I've experienced increased endurance and faster recovery times, allowing me to push myself to new limits.",
     },
     {
       id: "3",
@@ -52,7 +49,7 @@ export default function Review() {
       name: "Jemina CLone",
       designation: "Manager",
       description:
-        "According to most sources, Lorum Ipsum can be traced back to a text composed by Cicero Launch your campaign and benefit from our expertise.",
+        "I've tried many supplements in the past, but NeutroGain stands out for its quality and effectiveness. Not only have I seen improvements in my muscle definition, but I also feel more energized and focused during my workouts. Highly recommend!",
     },
     {
       id: "4",
@@ -60,61 +57,35 @@ export default function Review() {
       name: "Smith Vodka",
       designation: "Manager",
       description:
-        "According to most sources, Lorum Ipsum can be traced back to a text composed by Cicero Launch your campaign and benefit from our expertise.",
+        "NeutroGain delivers on its promises! I've been using their supplements for a few months now, and I've already surpassed my fitness goals. The best part is knowing that I'm fueling my body with clean, science-backed ingredients. Couldn't ask for more!",
     },
   ];
 
   return (
     <>
       {/* Review Start  */}
-      <section
-        className="relative md:py-24 py-16 bg-gray-50 dark:bg-slate-800"
-        id="testi"
-      >
+      <section className="relative md:py-24 py-16 bg-gray-50 dark:bg-slate-800" id="testi">
         <div className="container">
           <div className="grid grid-cols-1 pb-8 text-center">
-            <h6 className="text-orange-600 text-base font-medium uppercase mb-2">
-              Testimonial
-            </h6>
-            <h3 className="mb-4 md:text-2xl text-xl font-medium dark:text-white">
-              Client's Review
-            </h3>
+            <h6 className="text-orange-600 text-base font-medium uppercase mb-2">Testimonial</h6>
+            <h3 className="mb-4 md:text-2xl text-xl font-medium dark:text-white">Client's Review</h3>
 
-            <p className="text-slate-400 dark:text-slate-300 max-w-xl mx-auto">
-              Launch your campaign and benefit from our expertise on designing
-              and managing conversion centered Tailwind CSS html page.
-            </p>
+            <p className="text-slate-400 dark:text-slate-300 max-w-xl mx-auto">Stories of Success with NeutroGain</p>
           </div>
 
           <div className="grid grid-cols-1 mt-8 relative">
             <div className="tiny-two-item">
               <TinySlider settings={settings}>
-
-
                 {review.map((el, index) => (
                   <div className="tiny-slide" key={index}>
                     <div className="lg:flex p-6 lg:p-0 relative rounded-md shadow shadow-slate-200 dark:shadow-slate-700 bg-white dark:bg-slate-900 overflow-hidden m-2">
-                      <Image
-                        className="w-24 h-24 lg:w-48 lg:h-auto lg:rounded-none rounded-full mx-auto"
-                        src={el.profile}
-                        alt=""
-                        width="384"
-                        height="512"
-                      />
+                      <Image className="w-24 h-24 lg:w-48 lg:h-auto lg:rounded-none rounded-full mx-auto" src={el.profile} alt="" width="384" height="512" />
                       <div className="pt-6 lg:p-6 text-center lg:text-left space-y-4">
-                        <p className="text-base text-slate-500 dark:text-slate-200">
-                          {" "}
-                          " It seems that only fragments of the original text
-                          remain in the Lorem Ipsum texts used today. "{" "}
-                        </p>
+                        <p className="text-base text-slate-500 dark:text-slate-200"> " It seems that only fragments of the original text remain in the Lorem Ipsum texts used today. " </p>
 
                         <div>
-                          <span className="text-orange-600 block mb-1">
-                            {el.name}
-                          </span>
-                          <span className="text-slate-400 text-sm dark:text-white/60 block">
-                            {el.designation}
-                          </span>
+                          <span className="text-orange-600 block mb-1">{el.name}</span>
+                          {/* <span className="text-slate-400 text-sm dark:text-white/60 block">{el.designation}</span> */}
                         </div>
                       </div>
                     </div>
