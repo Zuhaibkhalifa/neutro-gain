@@ -80,7 +80,7 @@ export default function Portfolio() {
   const verifyCode = async () => {
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:3000/api/verify", {
+      const response = await fetch("/api/verify", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
